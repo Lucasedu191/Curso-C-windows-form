@@ -22,14 +22,7 @@ namespace ProjetoModulo01
         } 
         private void BtnBotao1_Click(object sender, EventArgs e)
         {
-            if(rdbSim.Checked)
-            {
-                MessageBox.Show("Sim");
-            }
-            else
-            {
-                MessageBox.Show("Não");
-            }
+            cmbNomes.Items.Add(textBox1.Text);
         }
       
 
@@ -37,7 +30,7 @@ namespace ProjetoModulo01
         {
 
             textBox1.Text = string.Empty;
-            rdbNao.Checked = true;
+  
   
         }
 
@@ -59,24 +52,9 @@ namespace ProjetoModulo01
             }
         }
 
-      
-
-        private void rdbNao_CheckedChanged(object sender, EventArgs e)
+        private void cmbNomes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (rdbSim.Checked)
-            {
-                MessageBox.Show("Sim");
-            }
-      
-        }
-
-        private void rdbSim_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rdbNao.Checked)
-            {
-                MessageBox.Show("Não");
-            }
-    
+            MessageBox.Show(cmbNomes.SelectedItem.ToString());
         }
     }   
 }

@@ -32,10 +32,8 @@
             this.Btnbotao2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.rdbSim = new System.Windows.Forms.RadioButton();
-            this.rdbNao = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
+            this.cmbNomes = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnBotao1
@@ -86,49 +84,38 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Nome:";
             // 
-            // rdbSim
+            // cmbNomes
             // 
-            this.rdbSim.AutoSize = true;
-            this.rdbSim.Checked = true;
-            this.rdbSim.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.rdbSim.Location = new System.Drawing.Point(6, 20);
-            this.rdbSim.Name = "rdbSim";
-            this.rdbSim.Size = new System.Drawing.Size(42, 17);
-            this.rdbSim.TabIndex = 6;
-            this.rdbSim.TabStop = true;
-            this.rdbSim.Text = "Sim";
-            this.rdbSim.UseVisualStyleBackColor = true;
-            this.rdbSim.CheckedChanged += new System.EventHandler(this.rdbSim_CheckedChanged);
+            this.cmbNomes.BackColor = System.Drawing.Color.LawnGreen;
+            this.cmbNomes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNomes.FormattingEnabled = true;
+            this.cmbNomes.Items.AddRange(new object[] {
+            "Andressa",
+            "Isabeli",
+            "Michele"});
+            this.cmbNomes.Location = new System.Drawing.Point(38, 125);
+            this.cmbNomes.Name = "cmbNomes";
+            this.cmbNomes.Size = new System.Drawing.Size(181, 21);
+            this.cmbNomes.TabIndex = 6;
+            this.cmbNomes.SelectedIndexChanged += new System.EventHandler(this.cmbNomes_SelectedIndexChanged);
             // 
-            // rdbNao
+            // label2
             // 
-            this.rdbNao.AutoSize = true;
-            this.rdbNao.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.rdbNao.Location = new System.Drawing.Point(6, 57);
-            this.rdbNao.Name = "rdbNao";
-            this.rdbNao.Size = new System.Drawing.Size(45, 17);
-            this.rdbNao.TabIndex = 7;
-            this.rdbNao.Text = "Não";
-            this.rdbNao.UseVisualStyleBackColor = true;
-            this.rdbNao.CheckedChanged += new System.EventHandler(this.rdbNao_CheckedChanged);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rdbSim);
-            this.groupBox1.Controls.Add(this.rdbNao);
-            this.groupBox1.Location = new System.Drawing.Point(12, 107);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(104, 100);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(47, 106);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Nome:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(490, 271);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbNomes);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Btnbotao2);
@@ -136,8 +123,6 @@
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Name = "Form1";
             this.Text = "Frmmain";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,9 +134,8 @@
         private System.Windows.Forms.Button Btnbotao2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton rdbSim;
-        private System.Windows.Forms.RadioButton rdbNao;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox cmbNomes;
+        private System.Windows.Forms.Label label2;
     }
 }
 
