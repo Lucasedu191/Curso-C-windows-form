@@ -25,19 +25,33 @@ namespace ProjetoModulo01
             if (iselecionado > -1)
             {
                 LsblistaNomes.Items[iselecionado] = textBox1.Text;
+                ordenar();
                 Btnbotao2_Click(Btnbotao2, new EventArgs());
                 iselecionado = -1;
                 BtnBotao1.Text = "Cadastrar";
                 return;
             }
             LsblistaNomes.Items.Add(textBox1.Text);
+            ordenar();
             //chama o evento click de limpar o text box
             Btnbotao2_Click(Btnbotao2, new EventArgs());
 
         }
+        //deixando ordenado para que os nomes saiam em ordem alfabetica
         private void ordenar ()
         {
-           // list
+            ListBox.ObjectCollection lista = LsblistaNomes.Items;
+            List<string> listaString = new List<string>();
+            foreach (var item in lista)
+            {
+                listaString.Add(item.ToString());
+            }
+            listaString = (from s in listaString select s).OrderBy(x => x).ToList();
+            LsblistaNomes.Items.Clear();
+            foreach (var item in listaString)
+            {
+                LsblistaNomes.Items.Add(item);
+            }
         }
         // limpa a label e limpa o textbox
         private void Btnbotao2_Click(object sender, EventArgs e)
