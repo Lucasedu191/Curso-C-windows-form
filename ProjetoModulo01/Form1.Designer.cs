@@ -32,8 +32,7 @@
             this.Btnbotao2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.LsblistaNomes = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.chkExemplo = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // BtnBotao1
@@ -84,32 +83,25 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Nome:";
             // 
-            // LsblistaNomes
+            // chkExemplo
             // 
-            this.LsblistaNomes.BackColor = System.Drawing.Color.Aqua;
-            this.LsblistaNomes.FormattingEnabled = true;
-            this.LsblistaNomes.Location = new System.Drawing.Point(24, 108);
-            this.LsblistaNomes.Name = "LsblistaNomes";
-            this.LsblistaNomes.Size = new System.Drawing.Size(216, 160);
-            this.LsblistaNomes.TabIndex = 6;
-            this.LsblistaNomes.DoubleClick += new System.EventHandler(this.LsblistaNomes_DoubleClick);
-            // 
-            // label2
-            // 
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(38, 89);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Lista de nomes";
+            this.chkExemplo.AutoSize = true;
+            this.chkExemplo.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.chkExemplo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.chkExemplo.Location = new System.Drawing.Point(12, 121);
+            this.chkExemplo.Name = "chkExemplo";
+            this.chkExemplo.Size = new System.Drawing.Size(43, 17);
+            this.chkExemplo.TabIndex = 6;
+            this.chkExemplo.Text = "Sim";
+            this.chkExemplo.UseVisualStyleBackColor = false;
+            this.chkExemplo.CheckStateChanged += new System.EventHandler(this.chkExemplo_CheckStateChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(490, 271);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.LsblistaNomes);
+            this.Controls.Add(this.chkExemplo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Btnbotao2);
@@ -128,8 +120,7 @@
         private System.Windows.Forms.Button Btnbotao2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox LsblistaNomes;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox chkExemplo;
     }
 }
 

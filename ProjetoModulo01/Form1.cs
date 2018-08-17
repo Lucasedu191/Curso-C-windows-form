@@ -12,52 +12,36 @@ namespace ProjetoModulo01
 {
     public partial class Form1 : Form
     {
-        int iselecionado;
+
 
         public Form1()
         {
             
             InitializeComponent();
-            iselecionado = -1;
+  
         } 
         private void BtnBotao1_Click(object sender, EventArgs e)
         {
-            if (iselecionado > -1)
+            //mostra uma mensagem apos clicar no botao cadastrar avisando se o checkbox esta marcado ou nao
+            if(chkExemplo.Checked)
             {
-                LsblistaNomes.Items[iselecionado] = textBox1.Text;
-                ordenar();
-                Btnbotao2_Click(Btnbotao2, new EventArgs());
-                iselecionado = -1;
-                BtnBotao1.Text = "Cadastrar";
-                return;
+                MessageBox.Show("Marcado");
+
             }
-            LsblistaNomes.Items.Add(textBox1.Text);
-            ordenar();
-            //chama o evento click de limpar o text box
-            Btnbotao2_Click(Btnbotao2, new EventArgs());
+            else
+            {
+                MessageBox.Show("Desmarcado");
+            }
 
         }
-        //deixando ordenado para que os nomes saiam em ordem alfabetica
-        private void ordenar ()
-        {
-            ListBox.ObjectCollection lista = LsblistaNomes.Items;
-            List<string> listaString = new List<string>();
-            foreach (var item in lista)
-            {
-                listaString.Add(item.ToString());
-            }
-            listaString = (from s in listaString select s).OrderBy(x => x).ToList();
-            LsblistaNomes.Items.Clear();
-            foreach (var item in listaString)
-            {
-                LsblistaNomes.Items.Add(item);
-            }
-        }
-        // limpa a label e limpa o textbox
+      
+
         private void Btnbotao2_Click(object sender, EventArgs e)
         {
 
             textBox1.Text = string.Empty;
+            //deixa o checkbox desmarcado apos clicar em limpar
+            chkExemplo.CheckState = CheckState.Unchecked;
         }
 
         // evento validating para aparecer a mensagem se for digitado apenas dois caracteres
@@ -77,12 +61,11 @@ namespace ProjetoModulo01
                 BtnBotao1_Click(BtnBotao1, new EventArgs());
             }
         }
-
-        private void LsblistaNomes_DoubleClick(object sender, EventArgs e)
+        // chama o evento toda vez que o estado do checkbox for alterado "marcado ou nao"
+        private void chkExemplo_CheckStateChanged(object sender, EventArgs e)
         {
-            iselecionado = LsblistaNomes.SelectedIndex;
-            textBox1.Text = LsblistaNomes.Items[iselecionado].ToString();
-            BtnBotao1.Text = "Alterar";
+
+            MessageBox.Show("Chamou o evento");
         }
     }   
 }
