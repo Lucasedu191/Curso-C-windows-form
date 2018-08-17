@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Marcela",
+            "25"}, -1);
             this.BtnBotao1 = new System.Windows.Forms.Button();
             this.Btnbotao2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbNomes = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lvlNomes = new System.Windows.Forms.ListView();
+            this.clhNome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clhIdade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // BtnBotao1
@@ -84,38 +88,44 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Nome:";
             // 
-            // cmbNomes
+            // lvlNomes
             // 
-            this.cmbNomes.BackColor = System.Drawing.Color.LawnGreen;
-            this.cmbNomes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbNomes.FormattingEnabled = true;
-            this.cmbNomes.Items.AddRange(new object[] {
-            "Andressa",
-            "Isabeli",
-            "Michele"});
-            this.cmbNomes.Location = new System.Drawing.Point(38, 125);
-            this.cmbNomes.Name = "cmbNomes";
-            this.cmbNomes.Size = new System.Drawing.Size(181, 21);
-            this.cmbNomes.TabIndex = 6;
-            this.cmbNomes.SelectedIndexChanged += new System.EventHandler(this.cmbNomes_SelectedIndexChanged);
+            this.lvlNomes.AllowColumnReorder = true;
+            this.lvlNomes.BackColor = System.Drawing.Color.Chartreuse;
+            this.lvlNomes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lvlNomes.CheckBoxes = true;
+            this.lvlNomes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clhNome,
+            this.clhIdade});
+            this.lvlNomes.FullRowSelect = true;
+            this.lvlNomes.GridLines = true;
+            listViewItem1.StateImageIndex = 0;
+            this.lvlNomes.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1});
+            this.lvlNomes.Location = new System.Drawing.Point(47, 122);
+            this.lvlNomes.Name = "lvlNomes";
+            this.lvlNomes.Size = new System.Drawing.Size(352, 137);
+            this.lvlNomes.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.lvlNomes.TabIndex = 6;
+            this.lvlNomes.UseCompatibleStateImageBehavior = false;
+            this.lvlNomes.View = System.Windows.Forms.View.Details;
             // 
-            // label2
+            // clhNome
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(47, 106);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Nome:";
+            this.clhNome.Text = "Nome";
+            this.clhNome.Width = 200;
+            // 
+            // clhIdade
+            // 
+            this.clhIdade.Text = "idade";
+            this.clhIdade.Width = 150;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(490, 271);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.cmbNomes);
+            this.Controls.Add(this.lvlNomes);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Btnbotao2);
@@ -134,8 +144,9 @@
         private System.Windows.Forms.Button Btnbotao2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbNomes;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListView lvlNomes;
+        private System.Windows.Forms.ColumnHeader clhNome;
+        private System.Windows.Forms.ColumnHeader clhIdade;
     }
 }
 

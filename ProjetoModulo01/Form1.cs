@@ -22,7 +22,7 @@ namespace ProjetoModulo01
         } 
         private void BtnBotao1_Click(object sender, EventArgs e)
         {
-            cmbNomes.Items.Add(textBox1.Text);
+          
         }
       
 
@@ -54,7 +54,7 @@ namespace ProjetoModulo01
 
         private void cmbNomes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(cmbNomes.SelectedItem.ToString());
+        
         }
     }   
 }
