@@ -22,17 +22,14 @@ namespace ProjetoModulo01
         } 
         private void BtnBotao1_Click(object sender, EventArgs e)
         {
-            //mostra uma mensagem apos clicar no botao cadastrar avisando se o checkbox esta marcado ou nao
-            if(chkExemplo.Checked)
+            if(rdbSim.Checked)
             {
-                MessageBox.Show("Marcado");
-
+                MessageBox.Show("Sim");
             }
             else
             {
-                MessageBox.Show("Desmarcado");
+                MessageBox.Show("Não");
             }
-
         }
       
 
@@ -40,8 +37,8 @@ namespace ProjetoModulo01
         {
 
             textBox1.Text = string.Empty;
-            //deixa o checkbox desmarcado apos clicar em limpar
-            chkExemplo.CheckState = CheckState.Unchecked;
+            rdbNao.Checked = true;
+  
         }
 
         // evento validating para aparecer a mensagem se for digitado apenas dois caracteres
@@ -61,11 +58,25 @@ namespace ProjetoModulo01
                 BtnBotao1_Click(BtnBotao1, new EventArgs());
             }
         }
-        // chama o evento toda vez que o estado do checkbox for alterado "marcado ou nao"
-        private void chkExemplo_CheckStateChanged(object sender, EventArgs e)
-        {
 
-            MessageBox.Show("Chamou o evento");
+      
+
+        private void rdbNao_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbSim.Checked)
+            {
+                MessageBox.Show("Sim");
+            }
+      
+        }
+
+        private void rdbSim_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbNao.Checked)
+            {
+                MessageBox.Show("Não");
+            }
+    
         }
     }   
 }
