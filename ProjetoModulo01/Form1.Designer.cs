@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Marcela",
-            "25"}, -1);
             this.BtnBotao1 = new System.Windows.Forms.Button();
             this.Btnbotao2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lvlNomes = new System.Windows.Forms.ListView();
             this.clhNome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clhIdade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblIdade = new System.Windows.Forms.Label();
+            this.txtBoxIdade = new System.Windows.Forms.TextBox();
+            this.btnRemoverNome = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnBotao1
@@ -66,23 +66,23 @@
             this.Btnbotao2.UseVisualStyleBackColor = false;
             this.Btnbotao2.Click += new System.EventHandler(this.Btnbotao2_Click);
             // 
-            // textBox1
+            // txtNome
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(47, 61);
-            this.textBox1.MaxLength = 100;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 20);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
-            this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
+            this.txtNome.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNome.Location = new System.Drawing.Point(7, 61);
+            this.txtNome.MaxLength = 100;
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(109, 20);
+            this.txtNome.TabIndex = 4;
+            this.txtNome.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
+            this.txtNome.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(54, 33);
+            this.label1.Location = new System.Drawing.Point(14, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 5;
@@ -97,11 +97,9 @@
             this.lvlNomes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.clhNome,
             this.clhIdade});
+            this.lvlNomes.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvlNomes.FullRowSelect = true;
             this.lvlNomes.GridLines = true;
-            listViewItem1.StateImageIndex = 0;
-            this.lvlNomes.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
             this.lvlNomes.Location = new System.Drawing.Point(47, 122);
             this.lvlNomes.Name = "lvlNomes";
             this.lvlNomes.Size = new System.Drawing.Size(352, 137);
@@ -109,6 +107,7 @@
             this.lvlNomes.TabIndex = 6;
             this.lvlNomes.UseCompatibleStateImageBehavior = false;
             this.lvlNomes.View = System.Windows.Forms.View.Details;
+            this.lvlNomes.DoubleClick += new System.EventHandler(this.lvlNomes_DoubleClick);
             // 
             // clhNome
             // 
@@ -120,14 +119,48 @@
             this.clhIdade.Text = "idade";
             this.clhIdade.Width = 150;
             // 
+            // lblIdade
+            // 
+            this.lblIdade.AutoSize = true;
+            this.lblIdade.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblIdade.Location = new System.Drawing.Point(144, 33);
+            this.lblIdade.Name = "lblIdade";
+            this.lblIdade.Size = new System.Drawing.Size(37, 13);
+            this.lblIdade.TabIndex = 7;
+            this.lblIdade.Text = "Idade:";
+            // 
+            // txtBoxIdade
+            // 
+            this.txtBoxIdade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.txtBoxIdade.Location = new System.Drawing.Point(132, 60);
+            this.txtBoxIdade.Name = "txtBoxIdade";
+            this.txtBoxIdade.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxIdade.TabIndex = 8;
+            this.txtBoxIdade.Validating += new System.ComponentModel.CancelEventHandler(this.txtBoxIdade_Validating);
+            // 
+            // btnRemoverNome
+            // 
+            this.btnRemoverNome.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRemoverNome.Image = global::ProjetoModulo01.Properties.Resources.if_icon_82_document_remove_314765;
+            this.btnRemoverNome.Location = new System.Drawing.Point(421, 215);
+            this.btnRemoverNome.Name = "btnRemoverNome";
+            this.btnRemoverNome.Size = new System.Drawing.Size(45, 44);
+            this.btnRemoverNome.TabIndex = 9;
+            this.btnRemoverNome.UseVisualStyleBackColor = false;
+            this.btnRemoverNome.Click += new System.EventHandler(this.btnRemoverNome_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Aqua;
             this.ClientSize = new System.Drawing.Size(490, 271);
+            this.Controls.Add(this.btnRemoverNome);
+            this.Controls.Add(this.txtBoxIdade);
+            this.Controls.Add(this.lblIdade);
             this.Controls.Add(this.lvlNomes);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNome);
             this.Controls.Add(this.Btnbotao2);
             this.Controls.Add(this.BtnBotao1);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -142,11 +175,14 @@
 
         private System.Windows.Forms.Button BtnBotao1;
         private System.Windows.Forms.Button Btnbotao2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView lvlNomes;
         private System.Windows.Forms.ColumnHeader clhNome;
         private System.Windows.Forms.ColumnHeader clhIdade;
+        private System.Windows.Forms.Label lblIdade;
+        private System.Windows.Forms.TextBox txtBoxIdade;
+        private System.Windows.Forms.Button btnRemoverNome;
     }
 }
 
